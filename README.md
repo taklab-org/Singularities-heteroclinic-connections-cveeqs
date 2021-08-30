@@ -42,7 +42,7 @@ For the case of $\theta=\pi/2$ (nonlinear Schrödinger case)
 >> script_proof_heteroclinics_NLS
 ```
 
-Note that the code above gives a computer-aided proof of 360 heteroclinic orbits. Each proof takes almost an hour of computation time. One can access the results of computer-assisted proofs in the folder `CGL_0_pt1/`.
+Note that the code above gives computer-assisted proofs of 360 heteroclinic orbits. Each proof takes almost an hour of computation time. One can access the results of computer-assisted proofs in the folder `CGL_0_pt1/`.
 
 ```
 >> cd ../CGL_0_pt1/
