@@ -1,39 +1,62 @@
-# Codes of "Global dynamics in nonconservative nonlinear Schroedinger equations"
+# Codes of "Singularities and heteroclinic connections in complex-valued evolutionary equations with a quadratic nonlinearity"
 
 This repository contains the MATLAB codes associated with the paper:
-"Global dynamics in nonconservative nonlinear Schr\"odinger equations"
-by J Jaquette, J-P Lessard and A Takayasu. ([arXiv:2012.09734 [math.AP]](https://arxiv.org/abs/2012.09734))
+"Singularities and heteroclinic connections in complex-valued evolutionary equations with a quadratic nonlinearity"
+by J Jaquette, J-P Lessard and A Takayasu.
 
-**Abstract**  In this paper, we study the global dynamics of a class of nonlinear Schr\"odinger equations using perturbative and non-perturbative methods. We prove the semi-global existence of solutions for initial conditions close to constant. That is, solutions will exist for all positive time or all negative time.  The existence of an open set of initial data which limits to zero in both forward and backward time is also demonstrated. This result in turn forces the non-existence of any real-analytic conserved quantities. For the quadratic case, we prove the existence of two (infinite) families of nontrivial unstable equilibria and prove the existence of heteroclinic orbits limiting to the nontrivial equilibria in backward time and to zero in forward time. By a time reversal argument, we also obtain heteroclinic orbits limiting to the nontrivial equilibria in forward time and to zero in backward time. The proofs for the quadratic equation are computer-assisted and rely on three separate ingredients: an enclosure of a local unstable manifold at the equilibria, a rigorous integration of the flow (starting from the unstable manifold) and a proof that the solution enters a validated stable set (hence showing convergence to zero).
+**Abstract**  In this paper,...
 
 These codes require *MATLAB* with [*INTLAB* - INTerval LABoratory](http://www.ti3.tu-harburg.de/rump/intlab/) (MATLAB toolbox for interval arithmetic) version 11 and [*Chebfun* - numerical computing with functions](https://www.chebfun.org/) version 5.7.0.
 
 ---
 
-A rough correspondence for some of the files & computational procedures in the paper are as follows:
+A rough correspondence for some of the files & our computer-assisted proofs in the present paper are as follows:
 
-### Existence of a steady state and an eigenpar for NLS
+### Proof of an eigenpar for the parameterization method
 
 ```
 >> cd Proofs_Eigenpairs
 >> script_verify_eigenpairs
 ```
 
-### Constructing a part of unstable manifold via Parameterization method
+For the choice of eigenvector one can see the specific rescaling in `F_eigenpairs.m`.
+
+### Proof of heteroclinic orbits coming out of the 1 complex dimensional local unstable manifold
+
+For the case of $\theta=0$
 
 ```
->> cd ../Manifolds/
->> script_get_manifold
+>> cd ../time_integration/
+>> script_proof_heteroclinics_CGL_0
 ```
 
-### Rigorous integration of a flow and validating semi-global existence limiting to zero
+For the case of $\theta=\pi/4$
 
 ```
->> cd ../verify_solution/
->> script_proof_NLS_from_P_at_1
+>> script_proof_heteroclinics_CGL_pi_4
 ```
 
-Then it proves the existence of heteroclinic orbits limiting to the nontrivial equilibria in backward time and to zero in forward time.
+For the case of $\theta=\pi/2$ (nonlinear Schrödinger case)
+
+```
+>> script_proof_heteroclinics_NLS
+```
+
+Note that the code above gives a computer-aided proof of 360 heteroclinic orbits. Each proof takes almost an hour of computation time. One can access the results of computer-assisted proofs in the folder `CGL_0_pt1/`.
+
+```
+>> cd ../CGL_0_pt1/
+>> script_plot_sol_dist_from_data
+```
+
+This code plots Figure 5(b). Also one can draw pictures both Figure 6(b) and 7(b) by using
+
+```
+>> cd ../CGL_pi_4_pt1/
+>> script_plot_sol_dist_from_data
+>> cd ../NLS/
+>> script_plot_sol_dist_from_data
+```
 
 
-Copyright (C) 2020  J Jaquette, J-P Lessard and A Takayasu.
+Copyright (C) 2021  J Jaquette, J-P Lessard and A Takayasu.
