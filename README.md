@@ -2,7 +2,7 @@
 
 This repository contains the MATLAB codes associated with the paper:
 "Singularities and heteroclinic connections in complex-valued evolutionary equations with a quadratic nonlinearity"
-by J Jaquette, J-P Lessard and A Takayasu.
+by J Jaquette, J-P Lessard and A Takayasu. ([arXiv:2109.00159 [math.DS]](https://arxiv.org/abs/2109.00159))
 
 **Abstract**: In this paper, we consider the dynamics of solutions to complex-valued evolutionary partial differential equations (PDEs) and show existence of heteroclinic orbits from nontrivial equilibria to zero via computer-assisted proofs. We also show that the existence of unbounded solutions along unstable manifolds at the equilibrium follows from the existence of heteroclinic orbits. Our computer-assisted proof consists of three separate techniques of rigorous numerics: an enclosure of a local unstable manifold at the equilibria, a rigorous integration of PDEs, and a constructive validation of a trapping region around the zero equilibrium.
 
